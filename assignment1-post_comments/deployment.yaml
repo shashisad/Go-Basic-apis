@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: assignment1
+  labels:
+    app: assignment1
+    tier: backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: assignment1
+  template:
+    metadata:
+      labels:
+        app: assignment1
+    spec:
+      containers:
+        - name: assignment1
+          image: shashi/assignment1:v2
+          ports:
+            - containerPort: 8000

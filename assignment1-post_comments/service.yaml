@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: assignment1
+  labels:
+    app: assignment1
+    tier: backend
+spec:
+  type: ClusterIP
+  selector:
+    app: assignment1
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 8000
